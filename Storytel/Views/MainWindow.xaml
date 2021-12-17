@@ -1,0 +1,205 @@
+﻿<Window x:Class="Storytel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Storytel"
+        mc:Ignorable="d"
+        Title="Google Chrome" Height="750" Width="1300" Icon="/Resources/icon_window.png">
+    <Grid>
+        <TabControl AutomationProperties.ItemStatus="">
+            <TabItem Background="DarkGray">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="20" Width="20" Source="/Resources/icon.png"/>
+                        <TextBlock FontSize="17" FontFamily="Calibri" Text="Storytel" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </TabItem.Header>
+
+                <Grid Background="#FFFFCDC3">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="17*"/>
+                        <RowDefinition Height="211*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="51"/>
+                            <ColumnDefinition Width="51"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Height="37" Width="40" x:Name="btnBack" Grid.Column="0" Grid.Row="0" Margin="5,5,5,5"/>
+                        <Button Height="37" Width="40" x:Name="btnNext" Grid.Column="1" Grid.Row="0" Margin="5,5,5,5"/>
+
+                        <Border 
+                            Height="37"
+                            
+                            CornerRadius="5,5,5,5" 
+                            Grid.Column="2" 
+                            Grid.Row="0" 
+                            Margin="5,5,5,5"
+                            Background="White"
+                            BorderBrush="DarkGray" 
+                            BorderThickness="1,1,1,1">
+                            <TextBox 
+                                BorderBrush="Transparent" 
+                                Background="Transparent" 
+                                Margin="5,8,5,8" 
+                                FontFamily="Calibri" 
+                                FontSize="14" 
+                                Text="https://www.storytel.com"/>
+                        </Border>
+
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="207*"/>
+                            <ColumnDefinition Width="440*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="106"/>
+                                <RowDefinition Height="154"/>
+                                <RowDefinition Height="123"/>
+                                <RowDefinition Height="118*"/>
+                            </Grid.RowDefinitions>
+
+
+                            <Image 
+                                Grid.Row="0"
+                                Height="80"
+                                Width="80"
+                                Margin="20,20,0,0"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left" 
+                                Source="/Resources/logo.png">
+                            </Image>
+
+                            <Label 
+                                Grid.Row="1"
+                                Content="Sesli kitapların &#xD;&#xA;dünyasını keşfet" 
+                                VerticalAlignment="Top" 
+                                HorizontalAlignment="Center" 
+                                Height="126" 
+                                Width="346" 
+                                Margin="17,0,0,0" 
+                                FontFamily="Calibri" 
+                                FontSize="48" 
+                                FontWeight="Bold" Foreground="#FF4C3D3A">
+                            </Label>
+
+                            <Label 
+                                Grid.Row="2" 
+                                Content="Binlerce sesli kitap ve e-kitap telefonunda &#xD;&#xA;ve tabletinde.
+                                &#xD;&#xA;Ayda ₺19,99'dan başlayan 
+                                abonelik&#xD;&#xA;seçenekleriyle Storytel'i şimdi dene!" 
+                                VerticalAlignment="Top" 
+                                HorizontalAlignment="Center" 
+                                Margin="17,0,0,0" 
+                                Width="371" 
+                                Height="116" 
+                                FontWeight="Bold" 
+                                FontFamily="Calibri" 
+                                FontSize="20" Foreground="#FF4C3D3A">
+                            </Label>
+
+                            <Border 
+                                Grid.Row="3" 
+                                Height="50"
+                                Width="395"
+                                Margin="5,14,9,156"
+                                CornerRadius="25" 
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Name="brdSubsriber"
+                                BorderBrush="#FFFF5C23" 
+                                Background="#FFFF5C23">
+                                <TextBlock 
+                                    Text="ABONELİK SEÇENEKLERİNİ GÖR" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" 
+                                    FontWeight="Bold" 
+                                    FontFamily="Calibri" 
+                                    FontSize="22" 
+                                    Foreground="#FFFFE1DB">
+                                </TextBlock>
+                            </Border>
+
+                            <Border 
+                                Grid.Row="3" 
+                                Height="50"
+                                Width="395"
+                                Margin="5,75,9,95"
+                                CornerRadius="25" 
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Name="brdPlans"
+                                BorderBrush="#FFFFE1DB" 
+                                Background="#FFFFE1DB">
+                                <TextBlock 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" 
+                                    FontWeight="Bold" 
+                                    FontFamily="Calibri" 
+                                    FontSize="22" 
+                                    Foreground="#FF4C3D3A" Text="Kütüphaneye Göz At"/>
+                            </Border>
+
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="75"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,10,0,0" Width="696">
+                                <Label Content="HEDIYE KARTI" FontWeight="Bold" FontFamily="Calibri" FontSize="18" Height="33" Margin="15,0,0,0" Foreground="#FF4C3D3A"/>
+                                <Label Content="HEDIYE KARTI" FontWeight="Bold" FontFamily="Calibri" FontSize="18" Height="33" Foreground="#FF4C3D3A"/>
+                                <Label Content="HEDIYE KARTI" FontWeight="Bold" FontFamily="Calibri" FontSize="18" Height="33" Foreground="#FF4C3D3A"/>
+                                <Label Content="HEDIYE KARTI" FontWeight="Bold" FontFamily="Calibri" FontSize="18" Height="33" Foreground="#FF4C3D3A"/>
+                                <Border 
+                                    Height="50"
+                                    Width="200"
+                                    CornerRadius="25"
+                                    BorderBrush="#FFFF5C23" 
+                                    Background="#FFFF5C23" Margin="30,0,0,0">
+                                    <Button 
+                                        Name="btnLogin"
+                                        Content="STORYTEL'İ DENE" 
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                                        FontWeight="Bold" 
+                                        FontFamily="Calibri" 
+                                        FontSize="22" 
+                                        Foreground="#FFFFE1DB" 
+                                        Background="Transparent" 
+                                        BorderBrush="Transparent" Click="btnLogin_Click">
+                                    </Button>
+                                </Border>
+                            </StackPanel>
+                            <Image 
+                                Grid.Row="1"
+                                Height="477"
+                                Margin="17,20,13,0"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Source="/Resources/background.jpg"  />
+
+                        </Grid>
+
+                    </Grid>
+
+                </Grid>
+
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>

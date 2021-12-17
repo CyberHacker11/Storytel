@@ -1,0 +1,211 @@
+﻿<Window x:Class="Storytel.WindowCategories"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Storytel"
+        mc:Ignorable="d"
+        Title="WindowCategories" Height="700" Width="1100">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="107"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label 
+            Name="lblCategorie"
+            Grid.Row="1" 
+            Content="Label" 
+            FontSize="36"
+            FontWeight="Bold" 
+            FontFamily="Calibri"
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Center" Height="54" Width="90"/>
+
+        <StackPanel VerticalAlignment="Top" Height="100" Width="804" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image 
+                Height="16" 
+                Width="16" 
+                Margin="0,10,0,0"
+                VerticalAlignment="Top"
+                Source="/Resources/shuffle.png">
+            </Image>
+
+            <Expander
+                Name="expSort"
+                Header="SIRALA" 
+                Margin="10,5,0,0"
+                FontWeight="Bold" 
+                FontFamily="Calibri" 
+                FontSize="18" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" FlowDirection="RightToLeft" ExpandDirection="Down" MouseDown="expSort_MouseDown">
+
+                <StackPanel>
+
+                    <Button 
+                    x:Name="btnSortedByBooksName"
+                    Content="KİTAP ADI"
+                    FontWeight="Bold" 
+                    FontFamily="Calibri" 
+                    FontSize="16"
+                    Background="#00000000" 
+                    BorderBrush="#00000000"/>
+
+                    <Button 
+                    x:Name="btnSortedByAuthors"
+                    Content="YAZAR"
+                    FontWeight="Bold" 
+                    FontFamily="Calibri" 
+                    FontSize="16"
+                    Background="#00000000" 
+                    BorderBrush="#00000000"/>
+
+                    <Button 
+                    x:Name="btnSortedByBooksYears"
+                    Content="YAYIN TARİHİ"
+                    FontWeight="Bold" 
+                    FontFamily="Calibri" 
+                    FontSize="16"
+                    Background="#00000000" 
+                    BorderBrush="#00000000"/>
+
+                </StackPanel>
+
+            </Expander>
+
+            <Image 
+                Height="16" 
+                Width="16"
+                Margin="250,10,0,0"
+                VerticalAlignment="Top"
+                Source="/Resources/language.png">
+            </Image>
+
+            <Expander
+                Name="expLanguage"
+                Header="DIL" 
+                Margin="10,5,0,0"
+                FontWeight="Bold" 
+                FontFamily="Calibri" 
+                FontSize="18" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" FlowDirection="RightToLeft">
+
+                <StackPanel>
+
+                    <Button 
+                        Name="btnTurkey"
+                        Content="TÜRKÇE"
+                        FontWeight="Bold" 
+                        FontFamily="Calibri" 
+                        FontSize="16"
+                        Background="#00000000" 
+                        BorderBrush="#00000000">
+                    </Button>
+
+                    <Button 
+                        Name="btnEnglish"
+                        Content="İNGİLİZCE"
+                        FontWeight="Bold" 
+                        FontFamily="Calibri" 
+                        FontSize="16"
+                        Background="#00000000" 
+                        BorderBrush="#00000000">
+                    </Button>
+
+                </StackPanel>
+
+            </Expander>
+
+            <Image 
+                Height="16" 
+                Width="16"
+                Margin="250,10,0,0"
+                VerticalAlignment="Top"
+                Source="/Resources/headphone.png">
+            </Image>
+
+            <Expander
+                Name="expType"
+                Header="" 
+                Margin="10,5,0,0"
+                FontWeight="Bold" 
+                FontFamily="Calibri" 
+                FontSize="18" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" FlowDirection="RightToLeft">
+
+                <StackPanel>
+
+                    <Button 
+                        Name="btnEbook"
+                        Content="SESLİ KİTAP"
+                        FontWeight="Bold" 
+                        FontFamily="Calibri" 
+                        FontSize="16"
+                        Background="#00000000" 
+                        BorderBrush="#00000000">
+                    </Button>
+
+                    <Button 
+                        Name="btnAudio"
+                        Content="E-KİTAP"
+                        FontWeight="Bold" 
+                        FontFamily="Calibri" 
+                        FontSize="16"
+                        Background="#00000000" 
+                        BorderBrush="#00000000">
+                    </Button>
+
+                </StackPanel>
+
+            </Expander>
+
+        </StackPanel>
+
+        <ListBox Grid.Row="3" ItemsSource="{Binding Bookss}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+
+                    <WrapPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+
+                            <Image Source="{Binding Image}" Height="150" Width="150"/>
+                            <TextBlock 
+                            TextWrapping="Wrap" 
+                            FontSize="18" 
+                            FontFamily="Calibri" 
+                            FontWeight="Bold" 
+                            Text="{Binding Name}" 
+                            Width="150">
+                            </TextBlock>
+
+                        </StackPanel>
+                    </WrapPanel>
+
+
+                    
+
+                    
+
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+    </Grid>
+</Window>

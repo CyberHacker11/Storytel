@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Storytel" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=CYBER-HACKER\SQLEXPRESS;Initial Catalog=Storytel;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="Storytel.Properties.Settings" SettingsPropertyName="StorytelConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Authors" Member="Authors">
+    <Type Name="Authors">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Authors_Books" Member="Books" ThisKey="ID" OtherKey="AuthorID" Type="Books" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Books" Member="Books">
+    <Type Name="Books">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Page" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Rating" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AuthorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LanguageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Authors_Books" Member="Authors" ThisKey="AuthorID" OtherKey="ID" Type="Authors" IsForeignKey="true" />
+      <Association Name="Categories_Books" Member="Categories" ThisKey="CategoryID" OtherKey="ID" Type="Categories" IsForeignKey="true" />
+      <Association Name="Languages_Books" Member="Languages" ThisKey="LanguageID" OtherKey="ID" Type="Languages" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categories" Member="Categories">
+    <Type Name="Categories">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Categories_Books" Member="Books" ThisKey="ID" OtherKey="CategoryID" Type="Books" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Languages" Member="Languages">
+    <Type Name="Languages">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Languages_Books" Member="Books" ThisKey="ID" OtherKey="LanguageID" Type="Books" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
